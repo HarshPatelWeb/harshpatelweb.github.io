@@ -3,13 +3,18 @@ import './LatestProject.css'
 const LatestProject = () => {
   return (
     <section id="latest" className="latest-project">
-      <div className="latest-container">
-        <span className="section-number">01</span>
-        <h2 className="section-title">Latest Project</h2>
-        
-        <div className="project-showcase">
-          <div className="project-video">
-            <div className="video-wrapper">
+      <div className="section-container">
+        <div className="section-header">
+          <span className="section-label">FEATURED</span>
+          <h2 className="section-title">Latest Project</h2>
+          <p className="section-subtitle">
+            MLOps pipeline showcasing industry best practices
+          </p>
+        </div>
+
+        <div className="project-card">
+          <div className="project-media">
+            <div className="video-container">
               <iframe
                 src="https://www.youtube.com/embed/pqBrzDNox1U"
                 title="MLOps Deployment"
@@ -20,8 +25,16 @@ const LatestProject = () => {
             </div>
           </div>
           
-          <div className="project-info">
-            <h3 className="project-title">MLOps Deployment on AWS</h3>
+          <div className="project-details">
+            <div className="project-header">
+              <h3 className="project-title">MLOps Deployment on AWS</h3>
+              <div className="project-meta">
+                <span className="meta-item">2024</span>
+                <span className="meta-divider">•</span>
+                <span className="meta-item">MLOps</span>
+              </div>
+            </div>
+            
             <p className="project-description">
               A comprehensive MLOps pipeline implementing industry best practices 
               with MLflow, DVC, Docker, and AWS cloud infrastructure. Features 
@@ -29,24 +42,26 @@ const LatestProject = () => {
             </p>
             
             <div className="project-tech">
-              <span className="tech-tag">MLflow</span>
-              <span className="tech-tag">DVC</span>
-              <span className="tech-tag">AWS</span>
-              <span className="tech-tag">Docker</span>
-              <span className="tech-tag">Python</span>
+              <span className="tech-badge">MLflow</span>
+              <span className="tech-badge">DVC</span>
+              <span className="tech-badge">AWS</span>
+              <span className="tech-badge">Docker</span>
+              <span className="tech-badge">Python</span>
             </div>
             
-            <div className="project-links">
+            <div className="project-actions">
               <a 
                 href="https://github.com/harshpatel1242/MLOps_Deployment" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="project-link"
+                className="project-link primary"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
                 View on GitHub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
               </a>
               <a 
                 href="https://dagshub.com/harshpatel1242/MLOps_Deployment" 
@@ -54,11 +69,12 @@ const LatestProject = () => {
                 rel="noopener noreferrer"
                 className="project-link secondary"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                </svg>
                 View on DagsHub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
               </a>
             </div>
           </div>

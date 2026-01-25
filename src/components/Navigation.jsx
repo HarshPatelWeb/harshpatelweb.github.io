@@ -3,7 +3,7 @@ import './Navigation.css'
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,16 +16,14 @@ const Navigation = () => {
 
   const navItems = [
     { label: 'Home', href: '#hero' },
-    { label: 'Latest', href: '#latest' },
-    { label: 'About', href: '#about' },
-    { label: 'Resume', href: '#resume' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Experience', href: '#resume' },
+    { label: 'Projects', href: '#latest' },
     { label: 'Contact', href: '#contact' },
   ]
 
   const handleNavClick = (e, href) => {
     e.preventDefault()
-    setIsMobileMenuOpen(false)
+    setIsMenuOpen(false)
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -35,11 +33,25 @@ const Navigation = () => {
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <a href="#hero" className="nav-logo" onClick={(e) => handleNavClick(e, '#hero')}>
+        <a 
+          href="#hero" 
+          className="nav-logo"
+          onClick={(e) => handleNavClick(e, '#hero')}
+        >
           HP
         </a>
 
-        <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+        <button 
+          className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           {navItems.map((item, index) => (
             <li key={index} className="nav-item">
               <a
@@ -53,16 +65,6 @@ const Navigation = () => {
             </li>
           ))}
         </ul>
-
-        <button
-          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </nav>
   )

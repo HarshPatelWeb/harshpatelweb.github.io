@@ -1,178 +1,225 @@
 .resume {
-  background-color: var(--grey-dark);
-  color: var(--white);
-  padding: 120px 5%;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0a0a15 100%);
+  padding: 140px 5%;
+  position: relative;
 }
 
-.resume-container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.resume .section-number {
-  color: var(--grey-light);
-}
-
-.resume .section-title {
-  color: var(--white);
-}
-
-.resume-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+.resume-content {
+  display: flex;
+  flex-direction: column;
   gap: 80px;
 }
 
-.resume-section-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: var(--white);
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--grey-mid);
-}
-
-.timeline {
+.experience-section {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 32px;
 }
 
-.timeline-item {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 30px;
+.experience-card {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  transition: all 0.4s;
   position: relative;
 }
 
-.timeline-marker {
-  width: 12px;
-  height: 12px;
-  background-color: var(--white);
-  border-radius: 50%;
-  margin-top: 6px;
-  position: relative;
-  z-index: 2;
-}
-
-.timeline-item::before {
+.experience-card::before {
   content: '';
   position: absolute;
-  left: 6px;
-  top: 18px;
-  bottom: -50px;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--grey-mid), transparent);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    var(--neon-cyan),
+    var(--neon-magenta)
+  );
+  border-radius: 20px 0 0 20px;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
-.timeline-item:last-child::before {
-  display: none;
+.experience-card:hover {
+  border-color: rgba(0, 255, 255, 0.3);
+  transform: translateX(8px);
+  box-shadow: 0 15px 50px rgba(0, 255, 255, 0.1);
 }
 
-.timeline-content {
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-header {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 24px;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.timeline-company {
+.experience-main {
+  flex: 1;
+  min-width: 250px;
+}
+
+.company-name {
+  font-family: 'Orbitron', sans-serif;
   font-size: 24px;
-  font-weight: 700;
-  color: var(--white);
+  font-weight: 900;
+  color: var(--neon-cyan);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
 }
 
-.timeline-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.timeline-role {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--grey-lighter);
-}
-
-.timeline-period {
-  font-size: 14px;
-  font-family: 'Space Mono', monospace;
-  color: var(--grey-light);
-}
-
-.timeline-description {
-  margin-top: 10px;
-  padding-left: 20px;
-  list-style: none;
-}
-
-.timeline-description li {
-  position: relative;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--grey-light);
+.role-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-white);
   margin-bottom: 12px;
 }
 
-.timeline-description li::before {
-  content: '—';
-  position: absolute;
-  left: -20px;
-  color: var(--grey-mid);
-}
-
-.education-list {
+.experience-meta {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 8px;
+  align-items: flex-end;
+  text-align: right;
 }
 
-.education-item {
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--grey-mid);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+.meta-badge {
+  padding: 6px 14px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 50px;
+  font-size: 11px;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.education-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+.period,
+.duration,
+.location {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+.experience-description {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experience-description li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  padding-left: 24px;
+  position: relative;
+}
+
+.experience-description li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--neon-green);
+  font-size: 18px;
+}
+
+.education-section {
+  padding-top: 60px;
+  border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.education-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text-white);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.education-card {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.4s;
+}
+
+.education-card:hover {
+  border-color: rgba(0, 255, 255, 0.3);
   transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 255, 255, 0.1);
+  background: rgba(0, 255, 255, 0.08);
 }
 
 .education-institution {
+  font-family: 'Orbitron', sans-serif;
   font-size: 20px;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 10px;
+  font-weight: 900;
+  color: var(--neon-magenta);
+  margin-bottom: 12px;
 }
 
 .education-degree {
   font-size: 15px;
-  color: var(--grey-lighter);
   line-height: 1.6;
-  margin-bottom: 10px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 12px;
 }
 
 .education-period {
+  font-family: 'Share Tech Mono', monospace;
   font-size: 13px;
-  font-family: 'Space Mono', monospace;
-  color: var(--grey-light);
+  color: var(--text-gray);
 }
 
 @media (max-width: 1024px) {
-  .resume-grid {
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .experience-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .education-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
   }
 }
 
 @media (max-width: 768px) {
-  .timeline-item {
-    grid-template-columns: 15px 1fr;
-    gap: 20px;
+  .resume {
+    padding: 100px 20px;
   }
 
-  .timeline-company {
+  .experience-card {
+    padding: 28px;
+  }
+
+  .company-name {
     font-size: 20px;
   }
 }

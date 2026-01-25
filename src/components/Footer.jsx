@@ -10,24 +10,22 @@ const Footer = () => {
           <div className="footer-brand">
             <div className="footer-logo">HP</div>
             <p className="footer-tagline">
-              Crafting intelligent solutions through code
+              Building intelligent systems, one line of code at a time.
             </p>
           </div>
           
           <div className="footer-links">
-            <div className="footer-section">
+            <div className="footer-column">
               <h4 className="footer-title">Navigation</h4>
               <ul className="footer-list">
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#latest">Latest Project</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Experience</a></li>
+                <li><a href="#latest">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
             
-            <div className="footer-section">
+            <div className="footer-column">
               <h4 className="footer-title">Connect</h4>
               <ul className="footer-list">
                 <li>
@@ -45,22 +43,15 @@ const Footer = () => {
                     Stack Overflow
                   </a>
                 </li>
-                <li>
-                  <a href="mailto:hpate158@uottawa.ca">
-                    Email
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <div className="footer-line"></div>
-          <div className="footer-info">
-            <p className="footer-copyright">
-              © {currentYear} Harsh Patel. All rights reserved.
-            </p>
+          <div className="footer-divider"></div>
+          <div className="footer-copyright">
+            <p>© {currentYear} Harsh Patel. All rights reserved.</p>
             <button 
               className="back-to-top"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -70,7 +61,6 @@ const Footer = () => {
                 <line x1="12" y1="19" x2="12" y2="5"></line>
                 <polyline points="5 12 12 5 19 12"></polyline>
               </svg>
-              Back to Top
             </button>
           </div>
         </div>
