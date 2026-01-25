@@ -1,0 +1,137 @@
+.contact {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 120px 5%;
+}
+
+.contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact .section-number {
+  color: var(--grey-light);
+}
+
+.contact .section-title {
+  color: var(--white);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-quote {
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--grey-lighter);
+  font-style: italic;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-card {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--grey-mid);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(10px);
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 50%;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--grey-light);
+}
+
+.contact-value {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+a.contact-value:hover {
+  color: var(--grey-lighter);
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 35px;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+}
+
+.contact-button svg {
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover svg {
+  transform: translateX(5px);
+}
+
+@media (max-width: 1024px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-5px);
+  }
+}

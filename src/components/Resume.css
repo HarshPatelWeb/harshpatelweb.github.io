@@ -1,0 +1,178 @@
+.resume {
+  background-color: var(--grey-dark);
+  color: var(--white);
+  padding: 120px 5%;
+}
+
+.resume-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.resume .section-number {
+  color: var(--grey-light);
+}
+
+.resume .section-title {
+  color: var(--white);
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+}
+
+.resume-section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--white);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--grey-mid);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 30px;
+  position: relative;
+}
+
+.timeline-marker {
+  width: 12px;
+  height: 12px;
+  background-color: var(--white);
+  border-radius: 50%;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 18px;
+  bottom: -50px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--grey-mid), transparent);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timeline-company {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.timeline-role {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--grey-lighter);
+}
+
+.timeline-period {
+  font-size: 14px;
+  font-family: 'Space Mono', monospace;
+  color: var(--grey-light);
+}
+
+.timeline-description {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.timeline-description li {
+  position: relative;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--grey-light);
+  margin-bottom: 12px;
+}
+
+.timeline-description li::before {
+  content: '—';
+  position: absolute;
+  left: -20px;
+  color: var(--grey-mid);
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.education-item {
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--grey-mid);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.education-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.education-institution {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.education-degree {
+  font-size: 15px;
+  color: var(--grey-lighter);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.education-period {
+  font-size: 13px;
+  font-family: 'Space Mono', monospace;
+  color: var(--grey-light);
+}
+
+@media (max-width: 1024px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    grid-template-columns: 15px 1fr;
+    gap: 20px;
+  }
+
+  .timeline-company {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,142 @@
+.latest-project {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 120px 5%;
+}
+
+.latest-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.latest-project .section-number {
+  color: var(--grey-light);
+}
+
+.latest-project .section-title {
+  color: var(--white);
+}
+
+.project-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.project-video {
+  position: relative;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border: 1px solid var(--grey-mid);
+  border-radius: 8px;
+  background-color: var(--grey-dark);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.project-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.project-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--grey-light);
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-tag {
+  padding: 8px 16px;
+  background-color: var(--grey-dark);
+  border: 1px solid var(--grey-mid);
+  border-radius: 50px;
+  font-size: 13px;
+  font-family: 'Space Mono', monospace;
+  color: var(--grey-lighter);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.project-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.project-link.secondary {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--grey-mid);
+}
+
+.project-link.secondary:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .project-showcase {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-link {
+    justify-content: center;
+  }
+}
